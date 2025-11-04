@@ -13,7 +13,7 @@ describe("Album Catalog - Interactions", () => {
     });
 
     it("navigates to the first album detail", () => {
-        cy.get('[data-cy="album-detail-button"]').first().click();
+        cy.get('[data-cy="album-button"]').first().click();
 
         cy.url().should("include", "/album/1");
     });
@@ -42,5 +42,13 @@ describe("Album Catalog - Interactions", () => {
         cy.get('[data-cy="songs-section-title"]').should("be.visible");
         cy.get('[data-cy="albums-section-title"]').should("be.visible");
         cy.get('[data-cy="authors-section-title"]').should("be.visible");
+    });
+
+    it("empty search gives no such query error", () => {
+        cy.get('[data-cy="search-button"]').click();
+
+        cy.url().should("include", "/search");
+
+        cy.get('[data-cy="no-search-error"]').should("be.visible");
     });
 });

@@ -57,6 +57,7 @@ export default async function Home() {
                                     <Link
                                         className="btn btn-primary btn-block"
                                         href={`/album/${album.id}`}
+                                        data-cy="album-button"
                                     >
                                         Detail
                                     </Link>

@@ -10,7 +10,7 @@ export default async function Home({
     console.log("q:", q);
 
     if (q == null || q === "") {
-        return <div>No Search query</div>;
+        return <div data-cy="no-search-error">No Search query</div>;
     }
 
     const db = getDb();

@@ -38,6 +38,7 @@ export function NavBar() {
                         query: searchLinkQuery,
                     }}
                     className="btn btn-ghost text-xl"
+                    data-cy="search-button"
                 >
                     Search
                 </Link>
